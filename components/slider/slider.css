@@ -1,0 +1,281 @@
+/* Genel ayarlar */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+#main-slider {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.background-image {
+    position: absolute;
+    top: 100;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Resmi ekrana göre kırp ve kapla */
+    z-index: -1;
+    /* İçeriklerin arkaplan resminin üzerinde görünmesini sağlar */
+}
+
+.main-slide-left,
+.main-slide-right {
+    position: relative;
+    z-index: 1;
+    color: white;
+}
+
+.main-slider-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    padding: 70px;
+    position: relative;
+}
+
+/* Sol bölüm */
+.main-slide-left {
+    max-width: 50%;
+}
+
+.next-webinar {
+    letter-spacing: 2px;
+    font: normal normal bold 21px/37px FS Albert;
+    color: #042164;
+    opacity: 1;
+}
+
+.event-name {
+    letter-spacing: 1px;
+    font: normal normal bold 40px/45px FS Albert;
+    line-height: 1.5;
+    color: #FFFFFF;
+    margin: 20px 0;
+}
+
+.description {
+    letter-spacing: 1px;
+    font: normal normal bold 36px/43px FS Albert;
+    color: #232B76;
+    margin-bottom: 20px;
+}
+
+.date {
+    font: normal normal normal 30px/57px FS Albert;
+    letter-spacing: 1px;
+    color: #FFFFFF;
+}
+
+#countdown {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+    font-size: 1.5rem;
+}
+
+.time-box {
+    background: rgb(75, 128, 214);
+    width: 85px;
+    height: 94px;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.time-box span {
+    display: block;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.time-box p {
+    margin: 0;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+/* Sağ bölüm */
+.main-slide-right {
+    display: flex;
+    flex-direction: column;
+    /* Butonları dikey hizala */
+    align-items: center;
+    /* Ortala */
+    gap: 15px;
+    /* Butonlar arasındaki boşluk */
+    margin: 20px;
+    /* Genel kenar boşluğu */
+}
+
+.btn {
+    width: 320px;
+    /* Sabit buton genişliği */
+    height: 50px;
+    /* Sabit buton yüksekliği */
+    cursor: pointer;
+    /* El şeklinde imleç */
+    transition: transform 0.2s ease-in-out;
+    /* Hover animasyonu */
+    border-radius: 10;
+}
+
+/* LOGIN butonu */
+.login-button {
+    width: 320px; /* Sabit genişlik */
+    height: 60px; /* Sabit yükseklik */
+    background: url('../../assets/images/login.png') center center no-repeat;
+    background-size: cover; /* Resmi tam kapla */
+    border: none; /* Kenarlık kaldır */
+    cursor: pointer; /* El şeklinde imleç */
+    transition: transform 0.2s ease-in-out; /* Hover animasyonu */
+}
+
+.login-button:hover {
+    transform: scale(1.1);
+    /* Hover'da büyüt */
+}
+
+/* REGISTER butonu */
+.register-button {
+    width: 320px; /* Sabit genişlik */
+    height: 60px; /* Sabit yükseklik */
+    background: url('../../assets/images/register.png') center center no-repeat;
+    background-size: cover; /* Resmi tam kapla */
+    border: none; /* Kenarlık kaldır */
+    cursor: pointer; /* El şeklinde imleç */
+    transition: transform 0.2s ease-in-out; /* Hover animasyonu */
+}
+
+.register-button:hover {
+    transform: scale(1.1);
+    /* Hover'da büyüt */
+}
+
+/* Mobil uyumluluk */
+@media (max-width: 768px) {
+    .main-slider-container {
+        flex-direction: column;
+        padding: 20px;
+        justify-content: center;
+    }
+
+    .main-slide-left {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .event-name {
+        font-size: 1.5rem;
+    }
+
+    .description {
+        font-size: 1rem;
+        color: #FFFFFF; /* Açık metin rengini değiştir */
+        font: normal normal bold 36px/13px FS Albert;
+    }
+
+    .date {
+        font-size: 1rem;
+        font: normal normal normal 30px/7px FS Albert;
+    }
+
+    #countdown {
+        justify-content: center;
+        font-size: 1rem;
+    }
+
+    .time-box {
+        width: 100px;
+        height: 70px;
+        padding: 20px;
+    }
+
+    .time-box p {
+        font-size: 0.55rem;
+        letter-spacing: 1px;
+    }
+
+    .time-box span {
+        font-size: 1.5rem;
+    }
+
+    .main-slide-right {
+        margin-top: 40px;
+    }
+
+    .login-button,
+    .register-button {
+        width: 250px;
+        height: 50px;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-slide-left {
+        padding: 0;
+        margin-top: 50px;
+    }
+
+    .event-name {
+        font-size: 1.2rem;
+    }
+
+    .description {
+        font-size: 0.9rem;
+    }
+
+    .date {
+        font-size: 0.8rem;
+    }
+
+    .time-box {
+        width: 50px;
+        height: 60px;
+        padding: 5px;
+    }
+
+    .time-box span {
+        font-size: 1.2rem;
+    }
+
+    .login-button,
+    .register-button {
+        width: 200px;
+        height: 45px;
+    }
+}
+
+@media (max-width: 350px) {
+    .main-slide-left {
+        padding: 0;
+        margin-top: 50px;
+    }
+
+    .event-name,
+    .description,
+    .date {
+        display: none; /* 480px altında yazıları gizler */
+    }
+
+    .time-box {
+        width: 50px;
+        height: 60px;
+        padding: 5px;
+    }
+
+    .time-box span {
+        font-size: 1.2rem;
+    }
+
+    .login-button,
+    .register-button {
+        width: 200px;
+        height: 45px;
+    }
+}

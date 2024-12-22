@@ -1,0 +1,96 @@
+/* Genel Header Stili */
+#main-header {
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content:space-around; /* Boşlukları eşit dağıt */
+}
+
+.logo img {
+    height: 50px;
+}
+
+/* Desktop Navigasyon */
+.nav-links {
+    display: flex;
+    gap: 40px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #232B76;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #007bff;
+}
+
+/* Mobil Menü Butonu */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #232B76;
+    z-index: 1100; /* Menü çekmecesinin üzerinde olacak */
+}
+
+/* Mobil Çekmece Menüsü */
+.drawer-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 250px;
+    background: white;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Menüleri aşağıya iter */
+    padding: 20px;
+    transform: translateX(-100%); /* Soldan başlar */
+    transition: transform 0.3s ease-in-out; /* Animasyon */
+}
+
+/* Menü Açıkken */
+.drawer-menu.open {
+    transform: translateX(0); /* Yukarı çıkar */
+}
+
+/* Menü Öğeleri */
+.drawer-menu a {
+    text-decoration: none;
+    color: #232B76;
+    margin-bottom: 15px;
+    font-size: 1rem;
+    text-align: center; /* Ortalansın */
+}
+
+.drawer-menu a:hover {
+    color: #007bff;
+}
+
+/* Mobil Uyumluluk */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}

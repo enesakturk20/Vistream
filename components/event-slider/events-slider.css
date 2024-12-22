@@ -1,0 +1,211 @@
+/* Genel Stil */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+.slider-container {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+    /* Taşan alanı gizle */
+    padding: 40px 0;
+}
+
+.slider-title {
+    font-size: 2em;
+    color: #0d1c4e;
+    margin-bottom: 20px;
+    text-align: center;
+    padding: 40px 0;
+}
+
+/* Slider */
+.slider {
+    display: flex;
+    /* Kartları yatay olarak sıralar */
+    gap: 15px;
+    /* Kartlar arasında boşluk bırakır */
+    overflow-x: auto;
+    /* Yatay kaydırma aktif */
+    scroll-behavior: smooth;
+    /* Yumuşak kaydırma */
+}
+
+.slider:active {
+    cursor: grabbing;
+    /* Tıklayınca sürükleme göstergesi */
+}
+
+/* Scrollbar'ı tamamen gizler */
+.slider::-webkit-scrollbar {
+    display: none;
+}
+
+.slider::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+}
+
+/* Slider Butonları */
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #0d1c4e;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    font-size: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+}
+
+/* Sol buton */
+.slider-btn.left {
+    left: 0px;
+    /* Sol taraftan 10px uzaklık */
+}
+
+/* Sağ buton */
+.slider-btn.right {
+    right: 0px;
+    /* Sağ taraftan 10px uzaklık */
+}
+
+.slider-btn:hover {
+    background-color: #007bff;
+    transition: background 0.3s ease;
+}
+
+.event-card {
+    min-width: 300px;
+    /* Kartların genişliği */
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.event-card:hover {
+    transform: scale(1.05);
+}
+
+.event-header {
+    background: #232B76 0% 0% no-repeat padding-box;
+    color: #fff;
+    font-size: 1em;
+    padding: 20px;
+    border-radius: 10px 10px 0px 0px;
+    margin: -15px -15px 10px -15px;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    /* İçerikleri dikey hizala */
+    gap: 20px;
+    /* Öğeler arasında boşluk bırak */
+}
+
+.line {
+    border: 1px solid #707070;
+    opacity: 0.3;
+}
+
+.content {
+    padding-top: 10px;
+    text-align: center;
+    font: normal normal normal 19px/24px FS Albert;
+    color: #042164;
+}
+
+.speaker-name {
+    padding-bottom: 20px;
+    text-align: center;
+    font: normal normal normal 18px/26px FS Albert;
+    letter-spacing: 0px;
+    color: #009FE3;
+}
+
+.card-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+}
+
+.register-btn {
+    background: #009FE3 0% 0% no-repeat padding-box;
+    box-shadow: 0px 0px 20px #1490DF60;
+    border-radius: 29px;
+    color: #fff;
+    padding: 10px 20px;
+    flex: 1;
+    border: none;
+}
+
+.register-btn:hover {
+    background: #0056b3;
+}
+
+.calendar-btn {
+    background: #042164 0% 0% no-repeat padding-box;
+    box-shadow: 0px 0px 20px #1490DF60;
+    border-radius: 29px;
+    text-align: center;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    padding: 10px 20px;
+    flex: 1;
+    border: none;
+}
+
+.calendar-btn:hover {
+    background: #000;
+}
+
+.details-btn {
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 0px 20px #1490DF60;
+    border: 1px solid #1490DF;
+    border-radius: 29px;
+    color: #1490DF;
+    padding: 10px 20px;
+    flex: 1;
+}
+
+.details-btn:hover {
+    background: #1490DF;
+    color: #FFFFFF;
+}
+
+/* Slider Content (Butonları ve Slider'ı İçeren Alan) */
+.slider-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* Butonları sola ve sağa yerleştirir */
+    position: relative;
+    width: 100%;
+    padding: 0 60px;
+    /* Sağ ve sol kenar boşlukları ekler */
+}
+
+/* Mobil cihazlarda slider butonlarını gizle */
+@media (max-width: 768px) {
+    .slider-btn {
+        display: none;
+    }
+
+    .slider-content {
+        padding: 0;
+    }
+}

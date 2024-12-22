@@ -1,0 +1,177 @@
+/* Genel Speakers Ayarları */
+#speakers {
+    padding: 50px 20px;
+    background: white;
+    text-align: center;
+    /* Tüm içerik merkezlenir */
+}
+
+#speakers h2 {
+    font-size: 2rem;
+    color: #232B76;
+    margin-bottom: 10px;
+}
+
+/* Event Buttons */
+.event-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.event-button {
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: 2px solid #232b76;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: white;
+    color: #232b76;
+}
+
+/* Aktif Durum */
+.event-button.active {
+    background-color: #232b76;
+    color: white;
+}
+
+/* Speakers Listesi */
+.speaker-list {
+    display: flex;
+    gap: 50px 100px;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* Speaker kartlarını yatayda ortala */
+}
+
+.speaker {
+    flex: 1 1 calc(33.333% - 20px);
+    max-width: 300px;
+    background: #f9f9f9;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.speaker:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.speaker img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    /* Yuvarlak resim */
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.speaker h3 {
+    margin: 10px 0;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.speaker p {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+/* Bio Butonu */
+.see-bio-btn {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background 0.3s ease;
+}
+
+.see-bio-btn:hover {
+    background: #0056b3;
+}
+
+/* Modal Genel Stili */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Modal İçerik */
+.modal-content {
+    background: white;
+    border-radius: 10px;
+    text-align: center;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.modal-header {
+    background-color: #e4f3fc;
+    padding: 10px 0px;
+    border-radius: 10px 10px 0 0;
+    /* Sadece üst köşelere yuvarlama */
+    width: 100%;
+    /* Header genişliği tamamen kapsayacak şekilde ayarlandı */
+    text-align: center;
+}
+
+.modal-header img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 2px solid #0193cf;
+}
+
+.modal-header h2 {
+    margin: 10px 0;
+    color: #232b76;
+}
+
+.modal-content p {
+    margin: 30px 30px;
+    color: #555;
+    font-size: 0.95rem;
+}
+
+/* Kapatma Butonu */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #aaa;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close-btn:hover {
+    color: black;
+}
+
+@media (max-width: 768px) {
+    .modal-content {
+        margin-top: 50;
+        transform: translateY(0); /* Varsayılan yukarı konumlandırmayı sıfırlar */
+    }
+}

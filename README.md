@@ -1,5 +1,7 @@
 # Ekran Görüntüleri
 
+# Proje Pure JS, HTML ve CSS kullanılarak yapılmıştır.
+
 ## Mobil Ekran Görüntüleri
 Uygulamanın mobil versiyonunun ekran görüntüleri aşağıda yer almaktadır.
 
